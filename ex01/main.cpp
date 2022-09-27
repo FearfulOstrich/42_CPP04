@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:57:51 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/08 15:03:55 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/27 17:36:16 by aalleon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main()
 {
-	Animal**	kennel = new Animal*[6];
+	Animal*	kennel[6];
 
 	kennel[0] = new Cat();
 	std::cout << std::endl;
@@ -40,5 +40,5 @@ int	main()
 
 	for (int i = 0; i < 6; i++)
 		delete kennel[i];
-	delete[] kennel;
+	// delete[] kennel;
 }
