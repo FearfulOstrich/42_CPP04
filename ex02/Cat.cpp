@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:34:08 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/08 15:05:35 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/27 11:44:27 by aalleon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ==============================================================================*/
 
 Cat::Cat(void)
-	: Animal("Cat")
+	: AAnimal("Cat")
 {
 	std::cout << "Cat Default Constructor called." << std::endl;
 	this->brain = new Brain();
@@ -68,7 +68,7 @@ Cat&	Cat::operator=(const Cat& other)
 
 std::ostream&	operator<<(std::ostream& os, const Cat& obj)
 {
-	os << static_cast<const Animal&>(obj);
+	os << static_cast<const AAnimal&>(obj);
 	return (os);
 }
 

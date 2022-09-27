@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 10:29:47 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/08 15:16:04 by antoine          ###   ########.fr       */
+/*   Created: 2022/09/27 11:36:47 by aalleon           #+#    #+#             */
+/*   Updated: 2022/09/27 11:36:48 by aalleon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 /*==============================================================================
 	Constructors.
 ==============================================================================*/
 
-Animal::Animal()
+AAnimal::AAnimal()
 	: type("")
 {
-	std::cout << "Animal Default Constructor called." << std::endl;
+	std::cout << "AAnimal Default Constructor called." << std::endl;
 	return ;
 }
 
-Animal::Animal(std::string type)
+AAnimal::AAnimal(std::string type)
 	: type(type)
 {
-	std::cout << "Animal Constructor with arg called." << std::endl;
+	std::cout << "AAnimal Constructor with arg called." << std::endl;
 	return ;
 }
 
-Animal::Animal(const Animal& other)
+AAnimal::AAnimal(const AAnimal& other)
 {
-	std::cout << "Animal Copy Constructor called." << std::endl;
+	std::cout << "AAnimal Copy Constructor called." << std::endl;
 	*this = other;
 	return ;
 }
@@ -41,9 +41,9 @@ Animal::Animal(const Animal& other)
 	Destructor.
 ==============================================================================*/
 
-Animal::~Animal(void)
+AAnimal::~AAnimal(void)
 {
-	std::cout << "Animal Destructor called." << std::endl;
+	std::cout << "AAnimal Destructor called." << std::endl;
 	return ;
 }
 
@@ -51,17 +51,17 @@ Animal::~Animal(void)
 	Operator overloads.
 ==============================================================================*/
 
-Animal&	Animal::operator=(const Animal& other)
+AAnimal&	AAnimal::operator=(const AAnimal& other)
 {
-	std::cout << "Animal assignment operator called." << std::endl;
+	std::cout << "AAnimal assignment operator called." << std::endl;
 	if (this != &other)
 		this->type = other.type;
 	return (*this);
 }
 
-std::ostream&	operator<<(std::ostream& os, const Animal& obj)
+std::ostream&	operator<<(std::ostream& os, const AAnimal& obj)
 {
-	os << "animal of type: " << obj.getType();
+	os << "Aanimal of type: " << obj.getType();
 	return (os);
 }
 
@@ -69,7 +69,7 @@ std::ostream&	operator<<(std::ostream& os, const Animal& obj)
 	Getters.
 ==============================================================================*/
 
-std::string	Animal::getType(void) const
+std::string	AAnimal::getType(void) const
 {
 	return (this->type);
 }

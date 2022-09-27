@@ -16,7 +16,7 @@ FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRCDIR	=
 
-SRCFILE	=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRCFILE	=	main.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 SRC		=	$(addprefix $(SRCDIR), $(SRCFILE))
 

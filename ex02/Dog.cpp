@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:58:48 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/08 15:05:50 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/27 11:44:37 by aalleon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ==============================================================================*/
 
 Dog::Dog(void)
-	: Animal("Dog")
+	: AAnimal("Dog")
 {
 	std::cout << "Dog Default Constructor called." << std::endl;
 	this->brain = new Brain();
@@ -69,7 +69,7 @@ Dog&	Dog::operator=(const Dog& other)
 
 std::ostream&	operator<<(std::ostream& os, const Dog& obj)
 {
-	os << static_cast<const Animal&>(obj);
+	os << static_cast<const AAnimal&>(obj);
 	return (os);
 }
 

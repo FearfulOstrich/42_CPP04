@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 10:29:38 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/08 18:37:14 by antoine          ###   ########.fr       */
+/*   Created: 2022/09/27 11:36:21 by aalleon           #+#    #+#             */
+/*   Updated: 2022/09/27 11:36:23 by aalleon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 
-class Animal
+class AAnimal
 {
 private:
 
@@ -23,16 +23,16 @@ protected:
 	std::string	type;
 
 	// Constructors
-	Animal();
-	Animal(std::string type);
-	Animal(const Animal& other);
+	AAnimal();
+	AAnimal(std::string type);
+	AAnimal(const AAnimal& other);
 
 public:
 	// Destructors
-	virtual	~Animal();
+	virtual	~AAnimal();
 
 	// Operator overload
-	virtual Animal&	operator=(const Animal& other);
+	virtual AAnimal&	operator=(const AAnimal& other);
 
 	// Accessors (getters should return by value or const-reference)
 	std::string	getType(void) const;
@@ -42,6 +42,6 @@ public:
 	virtual void	tellThoughts(void) const = 0;
 };
 
-std::ostream&	operator<<(std::ostream& os, const Animal& obj);
+std::ostream&	operator<<(std::ostream& os, const AAnimal& obj);
 
 #endif
