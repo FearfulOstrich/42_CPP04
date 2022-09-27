@@ -15,21 +15,30 @@
 
 int	main()
 {
-	Animal*	kennel = new Animal[6];
+	Animal**	kennel = new Animal*[6];
 
-	kennel[0] = Cat();
-	kennel[1] = Cat();
-	kennel[2] = Dog();
-	kennel[3] = Cat();
-	kennel[4] = Dog();
-	kennel[5] = Dog();
+	kennel[0] = new Cat();
+	std::cout << std::endl;
+	kennel[1] = new Cat();
+	std::cout << std::endl;
+	kennel[2] = new Dog();
+	std::cout << std::endl;
+	kennel[3] = new Cat();
+	std::cout << std::endl;
+	kennel[4] = new Dog();
+	std::cout << std::endl;
+	kennel[5] = new Dog();
+	std::cout << std::endl;
 
 	for (int i = 0; i < 6; i++)
 	{
-		std::cout << "[" << kennel[i].getType() << "]" << std::endl;
-		kennel[i].makeSound();
-		kennel[i].tellThoughts();
+		std::cout << "[" << kennel[i]->getType() << "]" << std::endl;
+		kennel[i]->makeSound();
+		kennel[i]->tellThoughts();
+		std::cout << std::endl;
 	}
 
+	for (int i = 0; i < 6; i++)
+		delete kennel[i];
 	delete[] kennel;
 }

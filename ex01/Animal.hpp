@@ -29,17 +29,17 @@ public:
 	Animal(const Animal& other);
 
 	// Destructors
-	virtual ~Animal();
+	virtual	~Animal();
 
 	// Operator overload
-	Animal&	operator=(const Animal& other);
+	virtual Animal&	operator=(const Animal& other);
 
 	// Accessors (getters should return by value or const-reference)
 	std::string	getType(void) const;
 
 	// Member functions
-	virtual	void	makeSound(void) const;
-	virtual	void	tellThoughts(void) const;
+	virtual void	makeSound(void) const;
+	virtual void	tellThoughts(void) const;
 };
 
 std::ostream&	operator<<(std::ostream& os, const Animal& obj);
