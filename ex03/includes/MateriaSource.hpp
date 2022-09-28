@@ -1,46 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 12:19:31 by aalleon           #+#    #+#             */
-/*   Updated: 2022/09/27 13:07:07 by aalleon          ###   ########.fr       */
+/*   Created: 2022/09/28 10:15:44 by aalleon           #+#    #+#             */
+/*   Updated: 2022/09/28 15:49:14 by aalleon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 # include <iostream>
+# include "IMateriaSource.hpp"
 
-class AMateria
+class MateriaSource: public IMateriaSource
 {
 private:
-
+	AMateria*	_learntMateria[4];
 protected:
-	std::string	_type;
 
 public:
 	// Constructors
-	AMateria(const std::string& type);
-	AMateria(const AMateria& other);
+	MateriaSource();
+	MateriaSource(const MateriaSource& other);
 
 	// Destructors
-	virtual ~AMateria();
+	virtual ~MateriaSource();
 
 	// Operator overload
-	AMateria&	operator=(const AMateria& other);
+	MateriaSource&	operator=(const MateriaSource& other);
 
 	// Accessors (getters should return by value or const-reference)
-	std::string const &	getType(void) const;
-
 	// Member functions
-	virtual AMateria*	clone() const = 0;
-	virtual void		use(ICharacter& target) = 0;
+	void		learnMateria(AMateria* m);
+	AMateria*	createMateria(std::string const& type) const;
 };
 
-std::ostream&	operator<<(std::ostream& os, const AMateria& obj);
+std::ostream&	operator<<(std::ostream& os, const MateriaSource& obj);
 
 #endif

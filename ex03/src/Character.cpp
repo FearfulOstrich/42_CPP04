@@ -6,7 +6,7 @@
 /*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 16:57:45 by aalleon           #+#    #+#             */
-/*   Updated: 2022/09/27 17:40:20 by aalleon          ###   ########.fr       */
+/*   Updated: 2022/09/28 16:07:59 by aalleon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,16 @@
 
 Character::Character(const std::string& name)
 	: _name(name)
-	, _inventory({NULL, NULL, NULL, NULL})
+	// , _inventory(new AMateria*[4])
 {
 	std::cout << "Character Default Constructor called." << std::endl;
+	for (int ix = 0; ix < 4; ix++)
+		_inventory[ix] = NULL;
 	return ;
 }
 
 Character::Character(const Character& other)
+	// : _inventory()
 {
 	std::cout << "Character Copy Constructor called." << std::endl;
 	*this = other;
@@ -40,7 +43,8 @@ Character::~Character(void)
 	std::cout << "Character Destructor called." << std::endl;
 	for (int ix = 0; ix < 4; ix++)
 		if (this->_inventory[ix] != NULL)
-			delete this->_inventory[ix];
+			delete &(this->_inventory[ix]);
+	// delete[] this->_inventory;
 	return ;
 }
 
@@ -75,7 +79,7 @@ std::ostream&	operator<<(std::ostream& os, const Character& obj)
 	Getters.
 ==============================================================================*/
 
-std::string const&	getName() const
+std::string const&	Character::getName() const
 {
 	return (this->_name);
 }
@@ -88,7 +92,7 @@ std::string const&	getName() const
 	Member functions.
 ==============================================================================*/
 
-void	equip(AMateria* m)
+void	Character::equip(AMateria* m)
 {
 	unsigned int	i;
 	
@@ -107,28 +111,28 @@ void	equip(AMateria* m)
 	return ;
 }
 
-void	unequip(int idx)
+void	Character::unequip(int idx)
 {
 	if (this->_inventory[idx] == NULL)
 	{
 		std::cout << "No item equipped in slot " << idx << "." << std::endl;
 		return ;
 	}
-	std::cout << *this << " dropped " << *(this->_inventory[idx]) << std::endl;
+	std::cout << *this << " dropped " << *this->_inventory[idx] << std::endl;
 	this->_inventory[idx] = NULL;
 	return ;
 }
 
-void	use(int idx, ICharacter& target)
+void	Character::use(int idx, ICharacter& target)
 {
 	if (this->_inventory[idx] == NULL)
 	{
 		std::cout << "No item equipped in slot " << idx << "." << std::endl;
 		return ;
 	}
-	std::cout << *this << " used " << *(this->_inventory[idx]) << std::endl;
+	std::cout << *this << " used " << *this->_inventory[idx] << std::endl;
 	this->_inventory[idx]->use(target);
-	delete (this->_inventory[idx]);
+	delete this->_inventory[idx];
 	this->_inventory[idx] = NULL;
 	return ;
 }

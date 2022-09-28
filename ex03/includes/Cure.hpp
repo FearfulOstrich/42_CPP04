@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 15:14:50 by aalleon           #+#    #+#             */
-/*   Updated: 2022/09/27 15:14:57 by aalleon          ###   ########.fr       */
+/*   Created: 2022/09/27 15:15:09 by aalleon           #+#    #+#             */
+/*   Updated: 2022/09/28 15:48:33 by aalleon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 # include <iostream>
 # include "AMateria.hpp"
 
-class ICharacter
+class Cure: public AMateria
 {
 private:
 
@@ -24,17 +24,21 @@ protected:
 
 public:
 	// Constructors
+	Cure();
+	Cure(const Cure& other);
+
 	// Destructors
-	virtual ~ICharacter() {}
+	virtual ~Cure();
 
 	// Operator overload
-	// Accessors (getters should return by value or const-reference)
-	virtual std::string const&	getName() const = 0;
+	Cure&	operator=(const Cure& other);
 
+	// Accessors (getters should return by value or const-reference)
 	// Member functions
-	virtual void	equip(AMateria* m) = 0;
-	virtual void	unequip(int idx) = 0;
-	virtual void	use(int idx, ICharacter& target) = 0;
+	virtual AMateria*	clone() const;
+	virtual void		use(ICharacter& target);
 };
+
+std::ostream&	operator<<(std::ostream& os, const Cure& obj);
 
 #endif

@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 15:15:09 by aalleon           #+#    #+#             */
-/*   Updated: 2022/09/27 15:15:18 by aalleon          ###   ########.fr       */
+/*   Created: 2022/09/27 12:59:49 by aalleon           #+#    #+#             */
+/*   Updated: 2022/09/28 15:48:16 by aalleon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-# define CURE_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
 # include <iostream>
+# include "AMateria.hpp"
 
-class Cure
+class Ice: public AMateria
 {
 private:
 
@@ -23,14 +24,14 @@ protected:
 
 public:
 	// Constructors
-	Cure();
-	Cure(const Cure& other);
+	Ice();
+	Ice(const Ice& other);
 
 	// Destructors
-	virtual ~Cure();
+	virtual ~Ice();
 
 	// Operator overload
-	Cure&	operator=(const Cure& other);
+	Ice&	operator=(const Ice& other);
 
 	// Accessors (getters should return by value or const-reference)
 	// Member functions
@@ -38,6 +39,6 @@ public:
 	virtual void		use(ICharacter& target);
 };
 
-std::ostream&	operator<<(std::ostream& os, const Cure& obj);
+std::ostream&	operator<<(std::ostream& os, const Ice& obj);
 
 #endif

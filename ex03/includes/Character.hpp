@@ -2,6 +2,13 @@
 # define _CHARACTER_HPP_
 
 # include <iostream>
+# include "IMateriaSource.hpp"
+# include "MateriaSource.hpp"
+# include "AMateria.hpp"
+# include "Ice.hpp"
+# include "Cure.hpp"
+# include "ICharacter.hpp"
+// # include "Character.hpp"
 
 class Character: public ICharacter
 {

@@ -7,7 +7,7 @@
 MateriaSource::MateriaSource(void)
 {
 	std::cout << "MateriaSource Default Constructor called." << std::endl;
-	for (int ix; ix < 4; ix++)
+	for (int ix = 0; ix < 4; ix++)
 		_learntMateria[ix] = NULL;
 	return ;
 }
@@ -71,18 +71,10 @@ std::ostream&	operator<<(std::ostream& os, const MateriaSource& obj)
 	Member functions.
 ==============================================================================*/
 
-void		learnMateria(AMateria* m)
+void		MateriaSource::learnMateria(AMateria* m)
 {
 	int	ix;
 
-	for (ix = 0; ix < 4; ix++)
-	{
-		if (this->_learntMateria[ix]->getType() == m->getType())
-		{
-			std::cout << "Materia already learnt." << std::endl;
-			return ;
-		}
-	}
 	ix = 0;
 	while (ix < 4 && this->_learntMateria[ix] != NULL)
 		ix++;
@@ -90,18 +82,20 @@ void		learnMateria(AMateria* m)
 	{
 		std::cout << "No more materia can be learnt from this source.";
 		std::cout << std::endl;
+		delete m;
 		return ;
 	}
 	this->_learntMateria[ix] = m->clone();
+	delete m;
 	return ;
 }
 
-AMateria*	createMateria(std::string const& type) const
+AMateria*	MateriaSource::createMateria(std::string const& type) const
 {
 	for (int ix = 0; ix < 4; ix++)
 	{
 		if (this->_learntMateria[ix]->getType() == type)
-			return (this->_learntMateria[ix]->clone())
+			return (this->_learntMateria[ix]->clone());
 	}
 	std::cout << "Materia " << type << " unknown." << std::endl;
 	return (NULL);

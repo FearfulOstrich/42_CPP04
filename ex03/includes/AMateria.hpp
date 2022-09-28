@@ -1,44 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 12:59:49 by aalleon           #+#    #+#             */
-/*   Updated: 2022/09/27 15:35:44 by aalleon          ###   ########.fr       */
+/*   Created: 2022/09/27 12:19:31 by aalleon           #+#    #+#             */
+/*   Updated: 2022/09/28 16:01:25 by aalleon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
-# include "AMateria.hpp"
 # include <iostream>
+# include "ICharacter.hpp"
 
-class Ice: public AMateria
+class ICharacter;
+
+class AMateria
 {
 private:
 
 protected:
+	std::string	_type;
 
 public:
 	// Constructors
-	Ice();
-	Ice(const Ice& other);
+	AMateria(const std::string& type);
+	AMateria(const AMateria& other);
 
 	// Destructors
-	virtual ~Ice();
+	virtual ~AMateria();
 
 	// Operator overload
-	Ice&	operator=(const Ice& other);
+	AMateria&	operator=(const AMateria& other);
 
 	// Accessors (getters should return by value or const-reference)
+	std::string const &	getType(void) const;
+
 	// Member functions
-	virtual AMateria*	clone() const;
-	virtual void		use(ICharacter& target);
+	virtual AMateria*	clone() const = 0;
+	virtual void		use(ICharacter& target) = 0;
 };
 
-std::ostream&	operator<<(std::ostream& os, const Ice& obj);
+std::ostream&	operator<<(std::ostream& os, const AMateria& obj);
 
 #endif
