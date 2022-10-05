@@ -71,7 +71,7 @@ unsigned int	Brain::getNIdea(void) const
 	Setters.
 ==============================================================================*/
 
-void	Brain::setIdea(unsigned int ix,std::string idea)
+void	Brain::setIdea(unsigned int ix, std::string idea)
 {
 	if (ix > 99)
 		return ;
