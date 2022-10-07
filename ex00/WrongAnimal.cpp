@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 23:43:13 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/07 10:39:54 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/07 08:44:28 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 ==============================================================================*/
 
 WrongAnimal::WrongAnimal()
-	: type("")
+	: _type("")
 {
 	std::cout << "WrongAnimal Default Constructor called." << std::endl;
 	return ;
 }
 
 WrongAnimal::WrongAnimal(std::string type)
-	: type(type)
+	: _type(type)
 {
 	std::cout << "WrongAnimal Constructor with arg called." << std::endl;
 	return ;
@@ -56,7 +56,7 @@ WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& other)
 	std::cout << "WrongAnimal assignment operator called." << std::endl;
 	if (this != &other)
 	{
-		this->type = other.type;
+		this->_type = other.getType();
 	}
 	return (*this);
 }
@@ -73,7 +73,7 @@ std::ostream&	operator<<(std::ostream& os, const WrongAnimal& obj)
 
 const std::string&	WrongAnimal::getType(void) const
 {
-	return (this->type);
+	return (this->_type);
 }
 
 /*==============================================================================

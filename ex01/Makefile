@@ -8,9 +8,9 @@
 
 NAME	=	thoughts
 
-CC		=	clang++
+CC		=	c++
 
-FLAGS	=	-Wall -Wextra -Werror -std=c++98
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
 
 ## Sources
 
@@ -37,7 +37,7 @@ all			:	$(NAME)
 $(NAME)		:	$(OBJ)
 				$(CC) $(OBJ) -o $(NAME)
 
-$(OBJDIR)%.o:	$(SRCDIR)%.cpp
+$(OBJDIR)%.o:	$(SRCDIR)%.cpp Makefile
 				$(CC) $(FLAGS) -c $< -o $@
 
 clean		:

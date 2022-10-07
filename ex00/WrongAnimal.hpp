@@ -6,12 +6,12 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 23:43:46 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/07 10:29:53 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/07 08:23:58 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _WRONGANIMAL_HPP_
-# define _WRONGANIMAL_HPP_
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 
@@ -20,7 +20,7 @@ class WrongAnimal
 private:
 
 protected:
-	std::string	type;
+	std::string	_type;
 
 public:
 	// Constructors

@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:29:47 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/07 10:46:58 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/07 08:43:50 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 ==============================================================================*/
 
 Animal::Animal()
-	: type("")
+	: _type("")
 {
 	std::cout << "Animal Default Constructor called." << std::endl;
 	return ;
 }
 
 Animal::Animal(std::string type)
-	: type(type)
+	: _type(type)
 {
 	std::cout << "Animal Constructor with arg called." << std::endl;
 	return ;
@@ -56,7 +56,7 @@ Animal&	Animal::operator=(const Animal& other)
 	std::cout << "Animal assignment operator called." << std::endl;
 	if (this != &other)
 	{
-		this->type = other.type;
+		this->_type = other.getType();
 	}
 	return (*this);
 }
@@ -71,9 +71,9 @@ std::ostream&	operator<<(std::ostream& os, const Animal& obj)
 	Getters.
 ==============================================================================*/
 
-std::string	Animal::getType(void) const
+const std::string&	Animal::getType(void) const
 {
-	return (this->type);
+	return (this->_type);
 }
 
 /*==============================================================================

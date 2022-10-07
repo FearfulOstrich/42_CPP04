@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 11:36:47 by aalleon           #+#    #+#             */
-/*   Updated: 2022/09/27 11:36:48 by aalleon          ###   ########.fr       */
+/*   Updated: 2022/10/07 09:01:26 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 ==============================================================================*/
 
 AAnimal::AAnimal()
-	: type("")
+	: _type("")
 {
 	std::cout << "AAnimal Default Constructor called." << std::endl;
 	return ;
 }
 
 AAnimal::AAnimal(std::string type)
-	: type(type)
+	: _type(type)
 {
 	std::cout << "AAnimal Constructor with arg called." << std::endl;
 	return ;
@@ -55,7 +55,7 @@ AAnimal&	AAnimal::operator=(const AAnimal& other)
 {
 	std::cout << "AAnimal assignment operator called." << std::endl;
 	if (this != &other)
-		this->type = other.type;
+		this->_type = other.getType();
 	return (*this);
 }
 
@@ -71,7 +71,7 @@ std::ostream&	operator<<(std::ostream& os, const AAnimal& obj)
 
 std::string	AAnimal::getType(void) const
 {
-	return (this->type);
+	return (this->_type);
 }
 
 /*==============================================================================

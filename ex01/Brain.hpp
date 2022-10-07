@@ -1,13 +1,25 @@
-#ifndef _BRAIN_HPP_
-# define _BRAIN_HPP_
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/07 08:33:00 by antoine           #+#    #+#             */
+/*   Updated: 2022/10/07 08:35:58 by antoine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
 
 class Brain
 {
 private:
-	unsigned int	n_ideas;
-	std::string		ideas[100];
+	unsigned int	_n_idea;
+	std::string		_ideas[100];
 
 protected:
 
@@ -25,7 +37,7 @@ public:
 	// Accessors (getters should return by value or const-reference)
 	std::string		getIdea(unsigned int ix) const;
 	unsigned int	getNIdea(void) const;
-	void			setIdea(unsigned int ix, std::string idea);
+	void			setIdea(std::string idea);
 
 	// Member functions
 };

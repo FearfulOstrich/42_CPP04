@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:58:48 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/06 22:38:27 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/07 08:44:09 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ Dog&	Dog::operator=(const Dog& other)
 	std::cout << "Dog assignment operator called." << std::endl;
 	if (this != &other)
 	{
-		this->type = other.type;
+		this->_type = other.getType();
 	}
 	return (*this);
 }

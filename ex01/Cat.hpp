@@ -6,12 +6,12 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 23:41:36 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/08 11:58:21 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/07 08:39:55 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CAT_HPP_
-# define _CAT_HPP_
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <iostream>
 # include "Animal.hpp"
@@ -20,8 +20,7 @@
 class Cat : public Animal
 {
 private:
-	std::string	type;
-	Brain*		brain;
+	Brain*	_brain;
 
 protected:
 
@@ -37,6 +36,7 @@ public:
 	Cat&	operator=(const Cat& other);
 
 	// Accessors (getters should return by value or const-reference)
+	Brain*	getBrain(void) const;
 
 	// Member functions
 	void	tellThoughts(void) const;

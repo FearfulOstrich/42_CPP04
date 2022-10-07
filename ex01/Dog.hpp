@@ -6,12 +6,12 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 14:58:53 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/08 11:58:41 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/07 08:40:01 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DOG_HPP_
-# define _DOG_HPP_
+#ifndef DOG_HPP
+# define DOG_HPP
 
 # include <iostream>
 # include "Animal.hpp"
@@ -20,8 +20,7 @@
 class Dog : public Animal
 {
 private:
-	std::string	type;
-	Brain*		brain;
+	Brain*	_brain;
 
 protected:
 
@@ -37,6 +36,7 @@ public:
 	Dog&	operator=(const Dog& other);
 
 	// Accessors (getters should return by value or const-reference)
+	Brain*	getBrain(void) const;
 
 	// Member functions
 	void	tellThoughts(void) const;

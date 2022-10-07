@@ -6,12 +6,12 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:29:38 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/08 18:37:14 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/07 08:25:36 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ANIMAL_HPP_
-# define _ANIMAL_HPP_
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
 
@@ -20,7 +20,7 @@ class Animal
 private:
 
 protected:
-	std::string	type;
+	std::string	_type;
 
 public:
 	// Constructors

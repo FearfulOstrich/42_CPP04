@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:34:08 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/08 15:05:35 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/07 08:58:42 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,18 @@ Cat::Cat(void)
 	: Animal("Cat")
 {
 	std::cout << "Cat Default Constructor called." << std::endl;
-	this->brain = new Brain();
-	this->brain->setIdea(0, "Eat mice.");
-	this->brain->setIdea(1, "Sleep.");
-	this->brain->setIdea(2, "Kill my master.");
+	this->_brain = new Brain();
+	this->_brain->setIdea("Eat mice.");
+	this->_brain->setIdea("Sleep.");
+	this->_brain->setIdea("Kill my master.");
 	return ;
 }
 
 Cat::Cat(const Cat& other)
 {
-	unsigned int	i;
-
 	std::cout << "Cat Copy Constructor called." << std::endl;
+	this->_brain = new Brain();
 	*this = other;
-	this->brain = new Brain();
-	i = -1;
-	while (++i < other.brain->getNIdea())
-		this->brain->setIdea(i, other.brain->getIdea(i));
 	return ;
 }
 
@@ -47,7 +42,7 @@ Cat::Cat(const Cat& other)
 Cat::~Cat(void)
 {
 	std::cout << "Cat Destructor called." << std::endl;
-	delete this->brain;
+	delete this->_brain;
 	return ;
 }
 
@@ -60,8 +55,8 @@ Cat&	Cat::operator=(const Cat& other)
 	std::cout << "Cat assignment operator called." << std::endl;
 	if (this != &other)
 	{
-		this->type = other.type;
-		this->brain = other.brain;
+		this->_type = other.getType();
+		*(this->_brain) = *other.getBrain();
 	}
 	return (*this);
 }
@@ -76,6 +71,11 @@ std::ostream&	operator<<(std::ostream& os, const Cat& obj)
 	Getters.
 ==============================================================================*/
 
+Brain*	Cat::getBrain(void) const
+{
+	return (this->_brain);
+}
+
 /*==============================================================================
 	Setters.
 ==============================================================================*/
@@ -89,8 +89,8 @@ void	Cat::tellThoughts(void) const
 	unsigned int	i;
 
 	i = -1;
-	while (++i < this->brain->getNIdea())
-		std::cout << this->brain->getIdea(i) << std::endl;
+	while (++i < this->_brain->getNIdea())
+		std::cout << this->_brain->getIdea(i) << std::endl;
 	return ;
 }
 

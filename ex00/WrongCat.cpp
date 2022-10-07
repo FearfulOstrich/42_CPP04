@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 23:41:12 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/07 10:34:37 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/07 08:44:46 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ WrongCat&	WrongCat::operator=(const WrongCat& other)
 	std::cout << "WrongCat assignment operator called." << std::endl;
 	if (this != &other)
 	{
-		this->type = other.type;
+		this->_type = other.getType();
 	}
 	return (*this);
 }

@@ -6,12 +6,12 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:29:38 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/07 10:46:52 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/06 18:51:24 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ANIMAL_HPP_
-# define _ANIMAL_HPP_
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
 
@@ -20,7 +20,7 @@ class Animal
 private:
 
 protected:
-	std::string	type;
+	std::string	_type;
 
 public:
 	// Constructors
@@ -35,7 +35,7 @@ public:
 	Animal&	operator=(const Animal& other);
 
 	// Accessors (getters should return by value or const-reference)
-	std::string	getType(void) const;
+	const std::string&	getType(void) const;
 
 	// Member functions
 	virtual void	makeSound(void) const;

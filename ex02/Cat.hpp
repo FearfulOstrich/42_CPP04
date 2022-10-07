@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 23:41:36 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/27 11:43:58 by aalleon          ###   ########.fr       */
+/*   Updated: 2022/10/07 09:02:35 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CAT_HPP_
-# define _CAT_HPP_
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <iostream>
 # include "AAnimal.hpp"
@@ -20,8 +20,7 @@
 class Cat : public AAnimal
 {
 private:
-	std::string	type;
-	Brain*		brain;
+	Brain*	_brain;
 
 protected:
 
@@ -37,6 +36,7 @@ public:
 	Cat&	operator=(const Cat& other);
 
 	// Accessors (getters should return by value or const-reference)
+	Brain*	getBrain(void) const;
 
 	// Member functions
 	void	tellThoughts(void) const;

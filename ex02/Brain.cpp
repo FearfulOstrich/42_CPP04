@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/07 08:33:03 by antoine           #+#    #+#             */
+/*   Updated: 2022/10/07 08:54:37 by antoine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Brain.hpp"
 
 /*==============================================================================
@@ -5,6 +17,7 @@
 ==============================================================================*/
 
 Brain::Brain(void)
+	: _n_idea(0)
 {
 	std::cout << "Brain Default Constructor called." << std::endl;
 	return ;
@@ -38,9 +51,10 @@ Brain&	Brain::operator=(const Brain& other)
 	std::cout << "Brain assignment operator called." << std::endl;
 	if (this != &other)
 	{
+		this->_n_idea = other.getNIdea();
 		i = -1;
-		while (++i < 100)
-			this->ideas[i] = other.ideas[i];
+		while (++i < this->_n_idea)
+			this->_ideas[i] = other.getIdea(i);
 	}
 	return (*this);
 }
@@ -57,26 +71,26 @@ std::ostream&	operator<<(std::ostream& os, const Brain& obj)
 
 std::string	Brain::getIdea(unsigned int ix) const
 {
-	if (ix >= this->n_ideas)
+	if (ix >= this->_n_idea)
 		return ("No idea at this index.");
-	return (this->ideas[ix]);
+	return (this->_ideas[ix]);
 }
 
 unsigned int	Brain::getNIdea(void) const
 {
-	return (this->n_ideas);
+	return (this->_n_idea);
 }
 
 /*==============================================================================
 	Setters.
 ==============================================================================*/
 
-void	Brain::setIdea(unsigned int ix,std::string idea)
+void	Brain::setIdea(std::string idea)
 {
-	if (ix > 99)
+	if (this->_n_idea == 100)
 		return ;
-	this->ideas[ix] = idea;
-	this->n_ideas++;
+	this->_ideas[this->_n_idea] = idea;
+	this->_n_idea++;
 	return ;
 }
 

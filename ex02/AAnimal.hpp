@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalleon <aalleon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 11:36:21 by aalleon           #+#    #+#             */
-/*   Updated: 2022/09/27 11:36:23 by aalleon          ###   ########.fr       */
+/*   Updated: 2022/10/07 09:00:17 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class AAnimal
 private:
 
 protected:
-	std::string	type;
+	std::string	_type;
 
 	// Constructors
 	AAnimal();

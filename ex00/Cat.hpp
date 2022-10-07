@@ -6,20 +6,18 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 23:41:36 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/07 10:48:28 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/06 18:50:42 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CAT_HPP_
-# define _CAT_HPP_
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include <iostream>
 # include "Animal.hpp"
 
 class Cat : public Animal
 {
 private:
-	std::string	type;
 protected:
 
 public:
@@ -36,7 +34,7 @@ public:
 	// Accessors (getters should return by value or const-reference)
 
 	// Member functions
-	void	makeSound(void) const;
+	virtual void	makeSound(void) const;
 };
 
 std::ostream&	operator<<(std::ostream& os, const Cat& obj);

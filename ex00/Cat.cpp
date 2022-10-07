@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:34:08 by antoine           #+#    #+#             */
-/*   Updated: 2022/09/06 15:19:02 by antoine          ###   ########.fr       */
+/*   Updated: 2022/10/06 18:54:05 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ Cat&	Cat::operator=(const Cat& other)
 	std::cout << "Cat assignment operator called." << std::endl;
 	if (this != &other)
 	{
-		this->type = other.type;
+		this->_type = other.getType();
 	}
 	return (*this);
 }
